@@ -9,9 +9,14 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
   </head>
   <body>
+    <py-env>
+      - numpy
+      - pandas
+      - scikit-learn
+    </py-env>
   <!-- Put Python code inside the the <py-script> tag -->
     <py-script src="test_file.py">
-      
+      print("I'm an egg.")
     </py-script>
   </body>
 </html>
