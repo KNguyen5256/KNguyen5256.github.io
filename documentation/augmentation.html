@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module augmentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>augmentation</strong></big></big></font></td
+><td align=right valign=bottom
+></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="torch.html">torch</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="augmentation.html#RandomImageAugmenter">RandomImageAugmenter</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RandomImageAugmenter">class <strong>RandomImageAugmenter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RandomImageAugmenter">RandomImageAugmenter</a>(output_image_size:&nbsp;Tuple[int,&nbsp;int],&nbsp;transform_probs:&nbsp;Union[torch.Tensor,&nbsp;List,&nbsp;numpy.ndarray,&nbsp;NoneType]&nbsp;=&nbsp;None,&nbsp;min_transforms:&nbsp;Optional[int]&nbsp;=&nbsp;1)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Randomly&nbsp;apply&nbsp;image&nbsp;augmentations.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RandomImageAugmenter-__init__"><strong>__init__</strong></a>(self, output_image_size: Tuple[int, int], transform_probs: Union[torch.Tensor, List, numpy.ndarray, NoneType] = None, min_transforms: Optional[int] = 1) -&gt; None</dt><dd><tt>Constructor&nbsp;for&nbsp;<a href="#RandomImageAugmenter">RandomImageAugmenter</a>&nbsp;objects.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output_image_size:&nbsp;tuple&nbsp;(width,&nbsp;height)&nbsp;indicating&nbsp;output&nbsp;image&nbsp;size.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform_probs:&nbsp;Array-like&nbsp;of&nbsp;probabilities&nbsp;for&nbsp;each&nbsp;transformation<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that&nbsp;could&nbsp;be&nbsp;applied.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_transforms:&nbsp;int&nbsp;representing&nbsp;the&nbsp;minimum&nbsp;number&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformations&nbsp;to&nbsp;apply,&nbsp;default&nbsp;0.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scale_images:&nbsp;bool&nbsp;indicating&nbsp;whether&nbsp;to&nbsp;scale&nbsp;images&nbsp;down&nbsp;to&nbsp;[0,&nbsp;1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;[0,&nbsp;255]&nbsp;or&nbsp;not.&nbsp;Default&nbsp;is&nbsp;True.</tt></dd></dl>
+
+<dl><dt><a name="RandomImageAugmenter-augment"><strong>augment</strong></a>(self, images: torch.Tensor) -&gt; torch.Tensor</dt><dd><tt>Randomly&nbsp;apply&nbsp;some&nbsp;transformations&nbsp;to&nbsp;the&nbsp;minibatch&nbsp;of&nbsp;images&nbsp;passed&nbsp;in.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images:&nbsp;Tensor&nbsp;of&nbsp;dimensions&nbsp;[batch_size,&nbsp;3,&nbsp;width,&nbsp;height]&nbsp;containing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;images&nbsp;to&nbsp;be&nbsp;augmented.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;augmented&nbsp;copy&nbsp;of&nbsp;the&nbsp;images.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-augment_minibatch"><strong>augment_minibatch</strong></a>(minibatch: torch.Tensor, augmenter: augmentation.RandomImageAugmenter, num_augments: int) -&gt; torch.Tensor</dt><dd><tt>Augment&nbsp;a&nbsp;minibatch&nbsp;of&nbsp;images&nbsp;and&nbsp;return&nbsp;a&nbsp;multi-viewed&nbsp;batch&nbsp;of&nbsp;images.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minibatch:&nbsp;torch.Tensor&nbsp;representing&nbsp;a&nbsp;minibatch&nbsp;of&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;augmenter:&nbsp;<a href="#RandomImageAugmenter">RandomImageAugmenter</a>&nbsp;to&nbsp;be&nbsp;used&nbsp;to&nbsp;augment&nbsp;the&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_augments:&nbsp;int&nbsp;representing&nbsp;the&nbsp;number&nbsp;of&nbsp;times&nbsp;to&nbsp;augment&nbsp;the&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;returned&nbsp;minibatch&nbsp;size&nbsp;will&nbsp;be&nbsp;(1&nbsp;+&nbsp;num_augments)&nbsp;*&nbsp;original_bsz,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;original_bsz&nbsp;is&nbsp;the&nbsp;original&nbsp;batch&nbsp;size&nbsp;of&nbsp;the&nbsp;minibatch.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;multi-viewed&nbsp;batch&nbsp;of&nbsp;images.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional<br>
+<strong>Tuple</strong> = typing.Tuple<br>
+<strong>Union</strong> = typing.Union</td></tr></table>
+</body></html>

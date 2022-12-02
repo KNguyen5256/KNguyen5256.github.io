@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module train_outlier_detector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>train_outlier_detector</strong></big></big></font></td
+><td align=right valign=bottom
+></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="torch.html">torch</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-compute_test_loss"><strong>compute_test_loss</strong></a>(model: torch.nn.modules.module.Module, test_dataloader: torch.utils.data.dataloader.DataLoader, augmenter: augmentation.RandomImageAugmenter, num_augments: int, normalizer: torchvision.transforms.transforms.Normalize, loss_fn: torch.nn.modules.module.Module) -&gt; torch.Tensor</dt><dd><tt>Compute&nbsp;the&nbsp;test&nbsp;loss&nbsp;for&nbsp;the&nbsp;model&nbsp;over&nbsp;a&nbsp;few&nbsp;minibatches&nbsp;from&nbsp;the&nbsp;test&nbsp;dataset.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model:&nbsp;torch.nn.Module&nbsp;representing&nbsp;the&nbsp;outlier&nbsp;detector&nbsp;to&nbsp;be&nbsp;trained.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test_dataloader:&nbsp;DataLoader&nbsp;that&nbsp;fetches&nbsp;images&nbsp;from&nbsp;a&nbsp;held-out&nbsp;test&nbsp;portion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;dataset&nbsp;to&nbsp;be&nbsp;cleaned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;augmenter:&nbsp;the&nbsp;RandomImageAugmenter&nbsp;to&nbsp;be&nbsp;used&nbsp;to&nbsp;augment&nbsp;image&nbsp;minibatches.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_augments:&nbsp;int&nbsp;&gt;&nbsp;2&nbsp;representing&nbsp;the&nbsp;number&nbsp;of&nbsp;views&nbsp;to&nbsp;create&nbsp;for&nbsp;each&nbsp;image<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;a&nbsp;minibatch.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;normalizer:&nbsp;Normalize&nbsp;transform&nbsp;used&nbsp;to&nbsp;normalize&nbsp;the&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loss_fn:&nbsp;torch.nn.Module&nbsp;representing&nbsp;the&nbsp;SimCLR&nbsp;loss&nbsp;to&nbsp;be&nbsp;used&nbsp;during<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;training.</tt></dd></dl>
+ <dl><dt><a name="-train_epoch"><strong>train_epoch</strong></a>(model: torch.nn.modules.module.Module, dataloader: torch.utils.data.dataloader.DataLoader, test_dataloader: torch.utils.data.dataloader.DataLoader, optimizer: torch.optim.optimizer.Optimizer, augmenter: augmentation.RandomImageAugmenter, num_augments: int, normalizer: torchvision.transforms.transforms.Normalize, loss_fn: torch.nn.modules.module.Module, early_stopper: early_stopping.EarlyStopper, save_dir: str) -&gt; torch.Tensor</dt><dd><tt>Train&nbsp;the&nbsp;outlier&nbsp;detector&nbsp;for&nbsp;one&nbsp;epoch.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model:&nbsp;torch.nn.Module&nbsp;representing&nbsp;the&nbsp;outlier&nbsp;detector&nbsp;to&nbsp;be&nbsp;trained.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataloader:&nbsp;DataLoader&nbsp;that&nbsp;fetches&nbsp;images&nbsp;from&nbsp;the&nbsp;dataset&nbsp;to&nbsp;be&nbsp;cleaned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test_dataloader:&nbsp;DataLoader&nbsp;that&nbsp;fetches&nbsp;images&nbsp;from&nbsp;a&nbsp;held-out&nbsp;test&nbsp;portion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;dataset&nbsp;to&nbsp;be&nbsp;cleaned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optimizer:&nbsp;Optimizer&nbsp;to&nbsp;be&nbsp;used&nbsp;during&nbsp;training.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;augmenter:&nbsp;the&nbsp;RandomImageAugmenter&nbsp;to&nbsp;be&nbsp;used&nbsp;to&nbsp;augment&nbsp;image&nbsp;minibatches.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_augments:&nbsp;int&nbsp;&gt;&nbsp;2&nbsp;representing&nbsp;the&nbsp;number&nbsp;of&nbsp;views&nbsp;to&nbsp;create&nbsp;for&nbsp;each&nbsp;image<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;a&nbsp;minibatch.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;normalizer:&nbsp;Normalize&nbsp;transform&nbsp;used&nbsp;to&nbsp;normalize&nbsp;the&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loss_fn:&nbsp;torch.nn.Module&nbsp;representing&nbsp;the&nbsp;SimCLR&nbsp;loss&nbsp;to&nbsp;be&nbsp;used&nbsp;during<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;training.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;early_stopper:&nbsp;EarlyStopper&nbsp;used&nbsp;to&nbsp;check&nbsp;whether&nbsp;we&nbsp;need&nbsp;to&nbsp;stop&nbsp;training<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;prevent&nbsp;overfitting&nbsp;or&nbsp;not.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;save_dir:&nbsp;str&nbsp;path&nbsp;to&nbsp;the&nbsp;folder&nbsp;the&nbsp;model&nbsp;needs&nbsp;to&nbsp;be&nbsp;saved&nbsp;in.</tt></dd></dl>
+ <dl><dt><a name="-train_outlier_detector"><strong>train_outlier_detector</strong></a>(model: torch.nn.modules.module.Module, dataloader: torch.utils.data.dataloader.DataLoader, test_dataloader: torch.utils.data.dataloader.DataLoader, save_dir: str, augmenter: augmentation.RandomImageAugmenter, num_epochs: Optional[int] = 10, optimizer: Optional[torch.optim.optimizer.Optimizer] = None, num_augments: Optional[int] = 1, loss_temp: Optional[float] = 0.07, compute_dataset_means_and_stds: Optional[bool] = True) -&gt; List</dt><dd><tt>Train&nbsp;an&nbsp;outlier&nbsp;detector.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model:&nbsp;torch.nn.Module&nbsp;representing&nbsp;the&nbsp;outlier&nbsp;detector&nbsp;to&nbsp;be&nbsp;trained.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataloader:&nbsp;DataLoader&nbsp;that&nbsp;fetches&nbsp;images&nbsp;from&nbsp;the&nbsp;dataset&nbsp;to&nbsp;be&nbsp;cleaned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test_dataloader:&nbsp;DataLoader&nbsp;that&nbsp;fetches&nbsp;images&nbsp;from&nbsp;a&nbsp;held-out&nbsp;test&nbsp;portion<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;dataset&nbsp;to&nbsp;be&nbsp;cleaned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;augmenter:&nbsp;the&nbsp;RandomImageAugmenter&nbsp;to&nbsp;be&nbsp;used&nbsp;to&nbsp;augment&nbsp;image&nbsp;mnibatches.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_epochs:&nbsp;int&nbsp;indicating&nbsp;the&nbsp;number&nbsp;of&nbsp;epochs&nbsp;of&nbsp;training.&nbsp;Defaults&nbsp;to&nbsp;10.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optimizer:&nbsp;Optimizer&nbsp;to&nbsp;be&nbsp;used&nbsp;during&nbsp;training.&nbsp;Defaults&nbsp;to&nbsp;SGD&nbsp;with&nbsp;lr&nbsp;0.01,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;momentum&nbsp;0.9.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_augments:&nbsp;int&nbsp;representing&nbsp;the&nbsp;number&nbsp;of&nbsp;views&nbsp;to&nbsp;create&nbsp;for&nbsp;each&nbsp;image<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;a&nbsp;minibatch.&nbsp;Defaults&nbsp;to&nbsp;1.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loss_temp:&nbsp;float&nbsp;representing&nbsp;the&nbsp;temperature&nbsp;to&nbsp;be&nbsp;used&nbsp;with&nbsp;the&nbsp;loss&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;training.&nbsp;Defaults&nbsp;to&nbsp;0.07.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Callable</strong> = typing.Callable<br>
+<strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional</td></tr></table>
+</body></html>
