@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module create_dataset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>create_dataset</strong></big></big></font></td
+><td align=right valign=bottom
+></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="torch.html">torch</a><br>
+</td><td width="25%" valign=top><a href="torchvision.transforms.html">torchvision.transforms</a><br>
+<a href="torchvision.utils.html">torchvision.utils</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a>(<a href="typing.html#Generic">typing.Generic</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="create_dataset.html#EasyICDDataset">EasyICDDataset</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EasyICDDataset">class <strong>EasyICDDataset</strong></a>(<a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#EasyICDDataset">EasyICDDataset</a>(image_dir:&nbsp;str,&nbsp;class_names:&nbsp;List[str],&nbsp;image_transform:&nbsp;Optional[Callable]&nbsp;=&nbsp;None,&nbsp;target_transform:&nbsp;Optional[Callable]&nbsp;=&nbsp;None)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+<a href="#EasyICDDataset">EasyICDDataset</a>:&nbsp;<br>
+Class&nbsp;to&nbsp;represent&nbsp;pytorch&nbsp;datasets&nbsp;created&nbsp;from&nbsp;EasyICD-scraped<br>
+image&nbsp;datasets.&nbsp;Depends&nbsp;on&nbsp;the&nbsp;file&nbsp;structure&nbsp;and&nbsp;naming&nbsp;conventions&nbsp;followed<br>
+by&nbsp;the&nbsp;easy_icd.scraping.scrape_images.scrape_images&nbsp;function&nbsp;to&nbsp;avoid&nbsp;having&nbsp;to<br>
+load&nbsp;image&nbsp;path&nbsp;lists&nbsp;and&nbsp;labels,&nbsp;and&nbsp;so&nbsp;will&nbsp;not&nbsp;work&nbsp;with&nbsp;arbitrary&nbsp;image<br>
+datasets.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="create_dataset.html#EasyICDDataset">EasyICDDataset</a></dd>
+<dd><a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a></dd>
+<dd><a href="typing.html#Generic">typing.Generic</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EasyICDDataset-__getitem__"><strong>__getitem__</strong></a>(self, idx: int) -&gt; Tuple[torch.Tensor, int]</dt><dd><tt>Get&nbsp;an&nbsp;image&nbsp;-&nbsp;label&nbsp;pair.</tt></dd></dl>
+
+<dl><dt><a name="EasyICDDataset-__init__"><strong>__init__</strong></a>(self, image_dir: str, class_names: List[str], image_transform: Optional[Callable] = None, target_transform: Optional[Callable] = None) -&gt; None</dt><dd><tt>Constructor&nbsp;for&nbsp;EasyICD&nbsp;dataset&nbsp;objects.</tt></dd></dl>
+
+<dl><dt><a name="EasyICDDataset-__len__"><strong>__len__</strong></a>(self) -&gt; int</dt><dd><tt>Get&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;dataset.</tt></dd></dl>
+
+<dl><dt><a name="EasyICDDataset-get_label_to_class_mapping"><strong>get_label_to_class_mapping</strong></a>(self) -&gt; Dict</dt><dd><tt>Get&nbsp;label&nbsp;to&nbsp;class&nbsp;mapping:<br>
+Get&nbsp;the&nbsp;mapping&nbsp;from&nbsp;numeric&nbsp;labels&nbsp;to&nbsp;class&nbsp;names.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__parameters__</strong> = ()</dl>
+
+<hr>
+Methods inherited from <a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a>:<br>
+<dl><dt><a name="EasyICDDataset-__add__"><strong>__add__</strong></a>(self, other: 'Dataset[T_co]') -&gt; 'ConcatDataset[T_co]'</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="torch.utils.data.dataset.html#Dataset">torch.utils.data.dataset.Dataset</a>:<br>
+<dl><dt><strong>__orig_bases__</strong> = (typing.Generic[+T_co],)</dl>
+
+<hr>
+Class methods inherited from <a href="typing.html#Generic">typing.Generic</a>:<br>
+<dl><dt><a name="EasyICDDataset-__class_getitem__"><strong>__class_getitem__</strong></a>(params)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="EasyICDDataset-__init_subclass__"><strong>__init_subclass__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;is&nbsp;called&nbsp;when&nbsp;a&nbsp;class&nbsp;is&nbsp;subclassed.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;does&nbsp;nothing.&nbsp;It&nbsp;may&nbsp;be<br>
+overridden&nbsp;to&nbsp;extend&nbsp;subclasses.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_dataset"><strong>create_dataset</strong></a>(image_dir: str, class_names: Optional[List[str]] = None, one_hot_labels: Optional[bool] = False) -&gt; create_dataset.EasyICDDataset</dt><dd><tt>Create&nbsp;dataset:<br>
+Create&nbsp;an&nbsp;EasyICD&nbsp;dataset&nbsp;from&nbsp;the&nbsp;images&nbsp;scraped&nbsp;using&nbsp;easy_icd.scraping<br>
+functions.</tt></dd></dl>
+ <dl><dt><a name="-get_one_hot_transform"><strong>get_one_hot_transform</strong></a>(num_classes: int) -&gt; torch.Tensor</dt><dd><tt>Get&nbsp;one&nbsp;hot&nbsp;transform:<br>
+Get&nbsp;a&nbsp;transform&nbsp;that&nbsp;converts&nbsp;numeric&nbsp;labels&nbsp;into&nbsp;one-hot&nbsp;encoded&nbsp;vectors.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Callable</strong> = typing.Callable<br>
+<strong>Dict</strong> = typing.Dict<br>
+<strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional<br>
+<strong>Tuple</strong> = typing.Tuple</td></tr></table>
+</body></html>
