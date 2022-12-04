@@ -7,33 +7,57 @@
     </head>
     <body>
         <script src="js/main.js"></script>
-        <p>This is an example of our program running.</p>
-        <p>*Note: the following format is based on the ipynb file under "Easy-ICD/examples"*</p>
-        <p>Here are the search terms:</p>
+        <p>This is a walkthrough of our Easy-ICD program running.</p>
+        <p>*Note: the following format is based on the ipynb file under "Easy-ICD/examples"; will remove later*</p>
+        <p>1. Here are the search terms:</p>
         <p>blueberry cheesecake, pizza, Caesar salad, falafel and hummus</p>
-        <p>Here is the scraping output:</p>
-        <img src="images/part1_img1.jpg" alt="Blueberry Cheesecake 1">
-        <img src="images/part1_img2.jpg" alt="Blueberry Cheesecake 2">
-        <img src="images/part1_img3.jpg" alt="Blueberry Cheesecake 3">
-        <img src="images/part1_img4.jpg" alt="Caesar Salad 1">
-        <img src="images/part1_img5.jpg" alt="Caesar Salad 2">
-        <img src="images/part1_img6.jpg" alt="Caesar Salad 3">
-        <img src="images/part1_img7.jpg" alt="Pizza 1">
-        <img src="images/part1_img8.jpg" alt="Pizza 2">
-        <img src="images/part1_img9.jpg" alt="Pizza 3">
-        <img src="images/part1_img10.jpg" alt="Falafel and Hummus 1">
-        <img src="images/part1_img11.jpg" alt="Falafel and Hummus 2">
-        <img src="images/part1_img12.jpg" alt="Falafel and Hummus 3">
-        <p>A dataset is then created.</p>
-        <p>Examples of augmented images:</p>
-        <img src="images/part2_img1.png" alt="Pizza 1 Augmented">
-        <img src="images/part2_img2.png" alt="Pizza 3 Augmented">
-        <img src="images/part2_img3.png" alt="Caesar Salad 3 Augmented">
-        <img src="images/part2_img4.png" alt="Caesar Salad 1 Augmented">
-        <p>Loss function results:</p>
-        <p>Finally, here is the end result: (A link to the list of curated images presumably)</p>
-        <button class="button" onclick="getResult()">Show Text</button>
-        <button class="button" onclick="removeResult()">Hide Text</button>
+        <p>2. Here is the scraping output:</p>
+        <table>
+            <tr>
+                <th>Blueberry Cheesecake</th>
+                <th>Caesar Salad</th>
+                <th>Pizza</th>
+                <th>Falafel and Hummus</th>
+            </tr>
+            <tr>
+                <td><img src="images/part1_img1.jpg" alt="Blueberry Cheesecake 1"></td>
+                <td><img src="images/part1_img4.jpg" alt="Caesar Salad 1"></td>
+                <td><img src="images/part1_img7.jpg" alt="Pizza 1"></td>
+                <td><img src="images/part1_img10.jpg" alt="Falafel and Hummus 1"></td>
+            </tr>
+            <tr>
+                <td><img src="images/part1_img2.jpg" alt="Blueberry Cheesecake 2"></td>
+                <td><img src="images/part1_img5.jpg" alt="Caesar Salad 2"></td>
+                <td><img src="images/part1_img8.jpg" alt="Pizza 2"></td>
+                <td><img src="images/part1_img11.jpg" alt="Falafel and Hummus 2"></td>
+            </tr>
+            <tr>
+                <td><img src="images/part1_img3.jpg" alt="Blueberry Cheesecake 3"></td>
+                <td><img src="images/part1_img6.jpg" alt="Caesar Salad 3"></td>
+                <td><img src="images/part1_img9.jpg" alt="Pizza 3"></td>
+                <td><img src="images/part1_img12.jpg" alt="Falafel and Hummus 3"></td>
+            </tr>
+        </table>
+        <p>3. A dataset is then created.</p>
+        <p>4. Examples of augmented images:</p>
+        <table>
+            <tr>
+                <th>Pizza</th>
+                <th>Caesar Salad</th>
+            </tr>
+            <tr>
+                <td><img src="images/part2_img1.png" alt="Pizza 1 Augmented"></td>
+                <td><img src="images/part2_img3.png" alt="Caesar Salad 3 Augmented"></td>
+            </tr>
+            <tr>
+                <td><img src="images/part2_img2.png" alt="Pizza 3 Augmented"></td>
+                <td><img src="images/part2_img4.png" alt="Caesar Salad 1 Augmented"></td>
+            </tr>
+        </table>
+        <p>5. Loss function results: ???</p>
+        <p>6. Here is the end result: (A link to the list of curated images presumably or not?)</p>
+        <button class="button" onclick="getResult()">Show Text (Will remove later)</button>
+        <button class="button" onclick="removeResult()">Hide Text (Will remove later)</button>
         <p id="result"></p>
     </body>
 </html>
